@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/4e63e05f9b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Log In & Sign Up Page</title>
+  </head>
+  <body>
+    <div class="wallpaper">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" class="toggle-btn" onclick="login()">
+            Log In
+          </button>
+          <button type="button" class="toggle-btn" onclick="signup()">
+            Sign Up
+          </button>
+        </div>
+        <!------------Social Media------------->
+
+        <!---------First Form--------------->
+        <form
+          id="login"
+          class="input-group"
+          action="index2.html"
+          onsubmit="return check_info();"
+        >
+          <input
+            type="text"
+            class="input-field"
+            placeholder="User Id"
+            id="username"
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Enter Password"
+            id="password"
+          />
+          <input
+            type="checkbox"
+            class="check-box"
+            id="remember"
+            required
+          /><label for="remember"><span>Remember Password</span></label
+          ><a href="#" class="forgot">Forgot Password?</a>
+          <button type="text" class="submit-btn">Log In</button>
+        </form>
+        <!---------End of First Form--------------->
+
+        <!------------Second Form------------>
+        <form
+          id="signup"
+          class="input-group"
+          action="index2.html"
+          onsubmit="return check_pass();"
+        >
+          <input
+            type="text"
+            class="input-field"
+            placeholder="User Id"
+            required
+          />
+          <input
+            type="email"
+            class="input-field"
+            placeholder="Email Address"
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Enter Password"
+            id="password2"
+            required
+          />
+          <input
+            type="password"
+            class="input-field"
+            placeholder="Verify Password"
+            id="verify"
+            required
+          />
+          <input type="checkbox" class="check-box" id="terms" required /><label
+            for="terms"
+            ><span>I agree to terms and conditions</span></label
+          >
+          <button type="text" class="submit-btn">Register</button>
+        </form>
+        <br />
+        <!---------------End of Second Form--------------->
+
+        <!------------Social Media------------->
+        <div class="social-icons">
+          <i class="fab fa-facebook fa-2x"></i>
+          <i class="fab fa-twitter fa-2x"></i>
+          <i class="fab fa-google fa-2x"></i>
+        </div>
+      </div>
+    </div>
+
+    <!----------JavaScript File included in HTML-------------->
+
+
+    <script>
+    var x = document.getElementById("login");
+var y = document.getElementById("signup");
+var z = document.getElementById("btn");
+
+function signup() {
+  x.style.left = "-400px";
+  y.style.left = "50px";
+  z.style.left = "110px";
+}
+function login() {
+  x.style.left = "50px";
+  y.style.left = "450px";
+  z.style.left = "0px";
+}
+
+function check_info() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  if (username == "" || password == "") {
+    alert("Please fill in the blank fields!");
+    document.getElementById("username").style.borderColor = "red";
+    document.getElementById("password").style.borderColor = "red";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function check_pass() {
+  var password2 = document.getElementById("password2").value;
+  var verify = document.getElementById("verify").value;
+
+  if (password2 == "" || verify == "") {
+    alert("Please fill in the blank fields!");
+    document.getElementById("password2").style.borderColor = "red";
+    document.getElementById("verify").style.borderColor = "red";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function check_pass() {
+  var password2 = document.getElementById("password2").value;
+  var verify = document.getElementById("verify").value;
+
+  if (password2 == verify) {
+    alert("password match!");
+    return true;
+  } else {
+    alert("password do not match!");
+    return false;
+  }
+}
+</script>
+    
+
+
+  </body>
+</html>
